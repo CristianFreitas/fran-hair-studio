@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import * as SheetPrimitive from "@radix-ui/react-dialog"
-import { cva, type VariantProps } from "class-variance-authority"
-import { X } from "lucide-react"
+import React from "react"; // Mudança aqui
+import * as SheetPrimitive from "@radix-ui/react-dialog";
+import { cva, type VariantProps } from "class-variance-authority";
+import { X } from "lucide-react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
-const Sheet = SheetPrimitive.Root
-
-const SheetTrigger = SheetPrimitive.Trigger
-
-const SheetClose = SheetPrimitive.Close
+// Atualize a interface SheetPortalProps
+interface SheetPortalProps extends SheetPrimitive.DialogPortalProps {
+  position?: VariantProps<typeof portalVariants>['position'];
+  className?: string; // Adicione esta linha
+}
 
 const portalVariants = cva("fixed inset-0 z-50 flex", {
   variants: {
@@ -23,11 +23,7 @@ const portalVariants = cva("fixed inset-0 z-50 flex", {
     },
   },
   defaultVariants: { position: "right" },
-})
-
-interface SheetPortalProps
-  extends SheetPrimitive.DialogPortalProps,
-    VariantProps<typeof portalVariants> {}
+});
 
 const SheetPortal = ({
   position,
@@ -35,11 +31,17 @@ const SheetPortal = ({
   children,
   ...props
 }: SheetPortalProps) => (
-  <SheetPrimitive.Portal className={cn(className)} {...props}>
-    <div className={portalVariants({ position })}>{children}</div>
+  <SheetPrimitive.Portal {...props}>
+    <div className={cn(portalVariants({ position }), className)}>
+      {children}
+    </div>
   </SheetPrimitive.Portal>
-)
-SheetPortal.displayName = SheetPrimitive.Portal.displayName
+);
+
+SheetPortal.displayName = SheetPrimitive.Portal.displayName;
+const Sheet = SheetPrimitive.Root
+const SheetTrigger = SheetPrimitive.Trigger
+const SheetClose = SheetPrimitive.Close
 
 const SheetOverlay = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Overlay>,
