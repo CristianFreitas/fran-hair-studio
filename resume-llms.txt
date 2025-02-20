@@ -1,0 +1,77 @@
+Resumo do Projeto Fran Hair Studio
+🎨 Identidade Visual
+
+Cores Principais:
+
+Primária: #d35c54 (Coral)
+Secundária: #723738 (Marrom Escuro)
+Terciárias:
+
+Light: #edd7d6 (Rosa Claro)
+Accent: #d79a97 (Rosa Suave)
+
+
+
+
+
+🚀 Tecnologias
+
+Next.js 15.1.7
+TypeScript
+Tailwind CSS
+Shadcn/UI
+Lucide Icons
+
+📁 Estrutura de Pastas
+Copysrc/
+├── components/
+│   ├── layout/
+│   │   └── Footer.tsx
+│   └── fran-hair-studio/
+│       ├── FranHairStudio.tsx
+│       ├── ProfileImageSlider.tsx
+│       ├── ServiceCard.tsx
+│       └── FeatureCard.tsx
+└── app/
+    ├── page.tsx
+    └── layout.tsx
+✨ Componentes Desenvolvidos
+
+Footer
+ProfileImageSlider
+
+Dimensões: 363x471
+Slide automático a cada 3 segundos
+Indicador de progresso
+
+
+ServiceCard
+FeatureCard
+
+🔍 Funcionalidades Implementadas
+
+Hero Section responsiva
+Slider de imagens interativo
+Botões de chamada para ação
+Navegação desktop e mobile
+Seções:
+
+Serviços em Destaque
+Recursos do Studio
+Prova Social
+Newsletter
+
+
+
+📱 Responsividade
+
+Design adaptável para mobile e desktop
+Breakpoints definidos no Tailwind
+Componentes reutilizáveis
+
+🎯 Próximos Passos Sugeridos
+
+Implementar página de serviços
+Criar sistema de agendamento
+Desenvolver página de portfólio
+Adicionar integração com WhatsApp
